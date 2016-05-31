@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Online_Library_System.Models.book>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th style="text-align:center;">
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th style="text-align:center;">
+            @Html.DisplayNameFor(model => model.Author)
+        </th>
+        
+      
+        <th style="text-align:center;">
+            @Html.DisplayNameFor(model => model.genre)
+        </th>
+       
+        <th style="text-align:center;">
+            @Html.DisplayNameFor(model => model.languages)
+        </th>
+        <th style="text-align:center;">
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+      
+        <th style="text-align:center;">
+            @Html.DisplayNameFor(model => model.pagesCount)
+        </th>
+        <th style="text-align:center;">
+            Action
+        </th>
+       
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td width="100px" style="text-align:center;">
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td style="text-align:center;">
+            @Html.DisplayFor(modelItem => item.Author)
+        </td>
+        
+        <td style="text-align:center;">
+            @Html.DisplayFor(modelItem => item.genre)
+        </td>
+        <td style="text-align:center;">
+            @Html.DisplayFor(modelItem => item.languages)
+        </td>
+        <td width="350px" style="text-align:center;">
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td style="text-align:center;">
+            @Html.DisplayFor(modelItem => item.pagesCount)
+        </td>
+        <td style="text-align:center;">
+            @if (item.isAvailable == "no") {
+                @Html.ActionLink("Order", "Order", new { id = item.ID }, new { @class = "inactive" }) 
+
+            }
+            else {
+                    @Html.ActionLink("Order", "Order", new { id = item.ID })
+
+            } |
+          
+                @Html.ActionLink("Rate", "Rate", new { id = item.ID }) |
+  
+             @if (item.isAvailable == "yes")
+            {
+                @Html.ActionLink("Return", "Return", new { id = item.ID }, new { @class = "inactive" })
+
+            }
+            else {
+                @Html.ActionLink("Return", "Return", new { id = item.ID })
+
+            }
+        </td>
+    </tr>
+}
+
+</table>

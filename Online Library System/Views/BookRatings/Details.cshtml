@@ -1,0 +1,34 @@
+﻿@model Online_Library_System.Models.BookRating
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BookRating</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.book.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.book.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RatingValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RatingValue)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

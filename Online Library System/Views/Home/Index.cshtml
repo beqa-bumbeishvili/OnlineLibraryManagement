@@ -1,0 +1,161 @@
+﻿@model IEnumerable<Online_Library_System.Models.book>
+<div id="slider">
+    <div class="shell">
+        <ul>
+            <li>
+                <div class="image">
+                    <img src="~/Content/images/books.png" alt="" />
+                </div>
+                <div class="details">
+                    <h2>Bestsellers</h2>
+                    <h3>Special Offers</h3>
+                    <p class="title">Pellentesque congue lorem quis massa blandit non pretium nisi pharetra</p>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id odio in tortor scelerisque dictum. Phasellus varius sem sit amet metus volutpat vel vehicula nunc lacinia.</p>
+                    <a href="@Url.Action("Index", "GoogleMap")" class="read-more-btn">See more</a>
+                </div>
+            </li>
+            <li>
+                <div class="image">
+                    <img src="~/Content/images/books.png" alt="" />
+                </div>
+                <div class="details">
+                    <h2>Bestsellers</h2>
+                    <h3>Special Offers</h3>
+                    <p class="title">Pellentesque congue lorem quis massa blandit non pretium nisi pharetra</p>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id odio in tortor scelerisque dictum. Phasellus varius sem sit amet metus volutpat vel vehicula nunc lacinia.</p>
+                    <a href="#" class="read-more-btn">See more</a>
+                </div>
+            </li>
+            <li>
+                <div class="image">
+                    <img src="~/Content/images/books.png" alt="" />
+                </div>
+                <div class="details">
+                    <h2>Bestsellers</h2>
+                    <h3>Special Offers</h3>
+                    <p class="title">Pellentesque congue lorem quis massa blandit non pretium nisi pharetra</p>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id odio in tortor scelerisque dictum. Phasellus varius sem sit amet metus volutpat vel vehicula nunc lacinia.</p>
+                    <a href="#" class="read-more-btn">See more</a>
+                </div>
+            </li>
+            <li>
+                <div class="image">
+                    <img src="~/Content/images/books.png" alt="" />
+                </div>
+                <div class="details">
+                    <h2>Bestsellers</h2>
+                    <h3>Special Offers</h3>
+                    <p class="title">Pellentesque congue lorem quis massa blandit non pretium nisi pharetra</p>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id odio in tortor scelerisque dictum. Phasellus varius sem sit amet metus volutpat vel vehicula nunc lacinia.</p>
+                    <a href="#" class="read-more-btn">See more</a>
+                </div>
+            </li>
+        </ul>
+        <div class="nav">
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+        </div>
+    </div>
+</div>
+<!-- End Slider -->
+    <!-- Main -->
+    <div id="main" class="shell">
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <ul class="categories">
+                <li>
+                    <h4>Categories</h4>
+                    <ul>
+                        @foreach (var item in Model.Select(x => x.genre).Distinct().Take(8))
+                        {
+                          <li><a href="#">@Html.DisplayFor(modelItem => item)</a></li>
+                        }
+                    </ul>
+                </li>   
+                
+                <li>
+                    <h4>Authors</h4>
+                    <ul>
+                        @foreach (var item in Model.Select(x => x.Author).OrderBy(x => Guid.NewGuid()).Take(12)) //randomad agenerirebs avtorebs
+                        {
+                            <li><a href="#">@Html.DisplayFor(modelItem => item)</a></li>
+                        }
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- End Sidebar -->
+        <!-- Content -->
+        <div id="content">
+            <!-- Products -->
+            <div class="products">
+               <h3>Featured Products<a href="@Url.Action("Index", "Modal")" target="_blank"> <button id="idea" style="margin-left:350px;">this one</button></a>  </h3>
+                <ul>
+                    @foreach (var item in Model.OrderBy(x => Guid.NewGuid()).Distinct().Take(8))
+                    {
+                        <li>
+                            <div class="product">
+                                <a href="#" class="info">
+                                    <span class="holder">
+                                        @{
+                                            string a = "data:image/png;base64," + Convert.ToBase64String(item.picture);
+                                            <img src=@a alt="" />
+                                        }
+                                        <span class="book-name">@item.Name</span>
+                                        <span class="author">by @item.Author</span>
+                                        <span class="description">@item.description</span>
+                                    </span>
+                                </a>
+                                <a href="#" class="buy-btn">BUY NOW <span class="price"><span class="low">$</span>@item.Price<span class="high">00</span></span></a>
+                            </div>
+                        </li>
+                                            }
+                </ul>
+                <!-- End Products -->
+            </div>
+            <div class="cl">&nbsp;</div>
+            <!-- Best-sellers -->
+            <div id="best-sellers">
+                <h3>Most Popular</h3>
+                <ul>
+                    @foreach (var item in Model.OrderByDescending(e => e.takes).Take(10))
+                    {
+                    <li>
+                        <div class="product">
+                            <a href="#">
+                                @{
+                                    string a = "data:image/png;base64," + Convert.ToBase64String(item.picture);
+                                    <img src=@a alt="" />
+                                }
+                                <span class="book-name">@item.Name </span>
+                                <span class="author">by @item.Author</span>
+                                <span class="price"><span class="low">$</span>@item.Price<span class="high">00</span></span>
+                            </a>
+                        </div>
+                    </li>
+                    }
+                </ul>
+            </div>
+            <!-- End Best-sellers -->
+        </div>
+        <!-- End Content -->
+        <div class="cl">&nbsp;</div>
+    </div>
+    <!-- End Main -->
+
+<!--
+        <li class="list-group-item"> <a href="@Url.Action("Index", "User")">configure users</a></li>
+        <li class="list-group-item"> <a href="@Url.Action("Index", "Books")">configure Books</a></li>
+        <li class="list-group-item"> <a href="@Url.Action("Index", "Libraries")">configure libraries</a></li>
+        <li class="list-group-item"> <a href="@Url.Action("Index", "BookUserLinks")">configure connection between books and users</a></li>
+        <li class="list-group-item"> <a href="@Url.Action("Index", "BookLibraryLinks")">configure connection between books and libraries</a></li>
+        <li class="list-group-item"> <a href="@Url.Action("Register", "Registration")">user registration</a></li>
+        <li class="list-group-item"> <a href="@Url.Action("Login", "Authorization")">user authorization</a></li>
+        <li class="list-group-item"> <a href="@Url.Action("Find", "Search")">book header search</a></li>
+        <li class="list-group-item"> <a href="@Url.Action("Index", "BookRatings")">configure book ratings</a></li>
+        <li class="list-group-item"> <a href="@Url.Action("Index", "topTen")">top ten books</a></li>
+        <li class="list-group-item"> <a href="@Url.Action("Index", "BookByCategories")">books by categories</a></li>
+        <li class="list-group-item"> <a href="@Url.Action("Index", "GoogleMap")">books by categories</a></li>
+        -->

@@ -1,0 +1,47 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+    <title>Online Library System</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="http://www.legaladvocate.co.nz/wp-content/uploads/2015/07/piershuntfavicon1.png" />
+    <link rel="stylesheet" href="~/Content/Site.css" type="text/css" media="all" />
+    <script type="text/javascript" src="~/Scripts/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.jcarousel.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/functions.js"></script>
+</head>
+<body>
+    <div id="header" class="shell">
+        <div id="logo"><h1><a href="@Url.Action("Index", "Home")">BestSeller</a></h1></div>
+        <div id="navigation">
+            <ul>
+                <li><a href="@Url.Action("Index", "Home")" class="active">Home</a></li>
+                <li><a href="@Url.Action("Index", "User")">Users</a></li>
+                <li><a href="@Url.Action("Index", "Books")">Books</a></li>
+                <li><a href="@Url.Action("Index", "Libraries")">Libraries</a></li>
+            </ul>
+        </div>
+        <div class="cl">&nbsp;</div>
+        <!-- 
+        <div id="login-details">
+            <p>Welcome, <a href="#" id="user">Guest</a> .</p><p><a href="#" class="cart"><img src="~/Content/images/cart-icon.png" alt="" /></a>Shopping Cart (0) <a href="#" class="sum">$0.00</a></p>
+        </div>
+        -->
+    </div>
+    @RenderBody()
+</body>
+</html>
+
+<!--
+<li class="list-group-item"> <a href="@Url.Action("Index", "User")">configure users</a></li>
+<li class="list-group-item"> <a href="@Url.Action("Index", "Books")">configure Books</a></li>
+<li class="list-group-item"> <a href="@Url.Action("Index", "Libraries")">configure libraries</a></li>
+<li class="list-group-item"> <a href="@Url.Action("Index", "BookUserLinks")">configure connection between books and users</a></li>
+<li class="list-group-item"> <a href="@Url.Action("Index", "BookLibraryLinks")">configure connection between books and libraries</a></li>
+<li class="list-group-item"> <a href="@Url.Action("Register", "Registration")">user registration</a></li>
+<li class="list-group-item"> <a href="@Url.Action("Login", "Authorization")">user authorization</a></li>
+<li class="list-group-item"> <a href="@Url.Action("Find", "Search")">book header search</a></li>
+<li class="list-group-item"> <a href="@Url.Action("Index", "BookRatings")">configure book ratings</a></li>
+<li class="list-group-item"> <a href="@Url.Action("Index", "topTen")">top ten books</a></li>
+<li class="list-group-item"> <a href="@Url.Action("Index", "BookByCategories")">books by categories</a></li>
+    -->
