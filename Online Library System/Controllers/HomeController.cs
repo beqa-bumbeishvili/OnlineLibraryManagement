@@ -11,23 +11,13 @@ namespace Online_Library_System.Controllers
     {
         LibraryModel db = new LibraryModel();
         public ActionResult Index()
-        {
-            
+        {            
             return View(db.books.ToList());
         }
-
-        public ActionResult About()
+        [HttpPost]
+        public ActionResult Index(string category)
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return View(db.books.ToList());
         }
     }
 }

@@ -1,4 +1,7 @@
 ﻿@model IEnumerable<Online_Library_System.Models.book>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
 <div id="slider">
     <div class="shell">
         <ul>
@@ -9,8 +12,8 @@
                 <div class="details">
                     <h2>Bestsellers</h2>
                     <h3>Special Offers</h3>
-                    <p class="title">Pellentesque congue lorem quis massa blandit non pretium nisi pharetra</p>
-                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id odio in tortor scelerisque dictum. Phasellus varius sem sit amet metus volutpat vel vehicula nunc lacinia.</p>
+                    <p class="title">Pellentesque congue lorem quis macssa blandit non pretium nisi pharetra</p>
+                    <p class="description">Lorem ipsum dolor sit amet, onsectetur adipiscing elit. Praesent id odio in tortor scelerisque dictum. Phasellus varius sem sit amet metus volutpat vel vehicula nunc lacinia.</p>
                     <a href="@Url.Action("Index", "GoogleMap")" class="read-more-btn">See more</a>
                 </div>
             </li>
@@ -67,12 +70,14 @@
             <ul class="categories">
                 <li>
                     <h4>Categories</h4>
-                    <ul>
-                        @foreach (var item in Model.Select(x => x.genre).Distinct().Take(8))
-                        {
-                          <li><a href="#">@Html.DisplayFor(modelItem => item)</a></li>
-                        }
-                    </ul>
+                    <form method="post">
+                        <ul>
+                            @foreach (var item in Model.Select(x => x.genre).Distinct().Take(8))
+                            {
+                                <li><a name="@Html.DisplayFor(modelItem => item)" href="#">@Html.DisplayFor(modelItem => item)</a></li>
+                            }
+                        </ul>
+                    </form>
                 </li>   
                 
                 <li>
@@ -108,7 +113,7 @@
                                         <span class="description">@item.description</span>
                                     </span>
                                 </a>
-                                <a href="#" class="buy-btn">BUY NOW <span class="price"><span class="low">$</span>@item.Price<span class="high">00</span></span></a>
+                                <a href="#" class="buy-btn">Order<span class="price"><span class="low">$</span>@item.Price<span class="high">00</span></span></a>
                             </div>
                         </li>
                                             }

@@ -169,7 +169,6 @@
     <Compile Include="Controllers\LibrariesController.cs" />
     <Compile Include="Controllers\ModalController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
-    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\TopTenController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -266,7 +265,6 @@
     <Content Include="Views\Registration\Post_Register.cshtml" />
     <Content Include="Views\Registration\Register.cshtml" />
     <Content Include="Views\Authorization\Login.cshtml" />
-    <Content Include="Views\Search\Find.cshtml" />
     <Content Include="Views\BookRatings\Create.cshtml" />
     <Content Include="Views\BookRatings\Delete.cshtml" />
     <Content Include="Views\BookRatings\Details.cshtml" />
