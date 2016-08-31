@@ -104,7 +104,7 @@ textarea { overflow: auto; }
 #logo { width: 390px; height: 41px; float: left; display: inline; margin-left: -4px;  position: relative; }
 #logo span { position: absolute; bottom: -17px; right: -1px; font-size: 11px; line-height: 20px; }
 #logo span a { color: #44acd5; }
-#logo h1 a { display: block; height: 75px; background: url(images/logo2.png); text-indent: -4000px; font-size: 0; line-height: 0; }
+#logo h1 a { display: block; height: 75px; background: url(images/logo5.png); text-indent: -4000px; font-size: 0; line-height: 0; }
 
 #login-details { position: absolute; right: 60px; top: 16px; font-size: 12px; line-height: 16px; color: #707070; }
 #login-details #user { color: #0182b5; text-decoration: underline; font-weight:bold; }
@@ -118,9 +118,9 @@ textarea { overflow: auto; }
 #navigation { float: right; display: inline; font-family: 'Georgia', Arial, serif; font-size: 14px; line-height: 20px; padding: 24px 4px 23px 0; }
 #navigation ul li { list-style: none; padding-left: 33px; float: left; display: inline; }
 #navigation ul li a { color: #383838; }
-#navigation ul li a.active { font-style: italic; font-weight: bold; text-decoration: none; cursor: default; }
+#navigation ul li a.active { font-style: italic; font-weight: bold; text-decoration: none; cursor:pointer; }
 
-#slider { height: 364px; width:1350px; position: relative; z-index: 10; }
+#slider { height: 364px; width:100%; position: relative; z-index: 10; }
 #slider .jcarousel-container { background: url(images/slider.png) no-repeat 0 0; height: 364px; width: 857px; height: 308px; padding: 36px 14px 20px 13px; }
 #slider .jcarousel-clip { width: 857px; height: 308px; overflow: hidden; }
 #slider .jcarousel-item { width: 857px; height: 308px; }

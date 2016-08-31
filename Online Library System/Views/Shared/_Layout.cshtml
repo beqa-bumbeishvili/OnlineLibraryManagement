@@ -6,27 +6,46 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <link rel="shortcut icon" href="http://www.legaladvocate.co.nz/wp-content/uploads/2015/07/piershuntfavicon1.png" />
     <link rel="stylesheet" href="~/Content/Site.css" type="text/css" media="all" />
+    <script src="~/Scripts/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/Content/sweetalert.css" />
     <script type="text/javascript" src="~/Scripts/jquery-1.6.2.min.js"></script>
     <script type="text/javascript" src="~/Scripts/jquery.jcarousel.min.js"></script>
     <script type="text/javascript" src="~/Scripts/functions.js"></script>
+
 </head>
+
+
 <body>
     <div id="header" class="shell">
-        <div id="logo"><h1><a href="@Url.Action("Index", "Home")">BestSeller</a></h1></div>
+        <div id="logo"><h1><a href="@Url.Action("Index", "Home")"></a></h1></div>
         <div id="navigation">
             <ul>
                 <li><a href="@Url.Action("Index", "Home")" class="active">Home</a></li>
-                <li><a href="@Url.Action("Index", "User")">Users</a></li>
-                <li><a href="@Url.Action("Index", "Books")">Books</a></li>
-                <li><a href="@Url.Action("Index", "Libraries")">Libraries</a></li>
+                <li><a id="scrollBar">Books</a></li>
+                <li style="opacity:0.4;"><a @*href="@Url.Action("Index", "Libraries")"*@ onclick="Message()">Libraries</a></li>
+                <li style="opacity:0.4;"><a @*href="@Url.Action("Index", "User")"*@ onclick="Message()">Users</a></li>
             </ul>
         </div>
         <div class="cl">&nbsp;</div>
 
     </div>
+    <script type="text/javascript">
+        function Message() {
+            swal({ title: "alert!", text: "page is under construction!", imageUrl: "https://s3.amazonaws.com/ps-services-us-east-1-914248642252/s3/research-wiki-elasticsearch-prod-s3bucket/images/thumb/d/df/Under_construction_icon-blue.png/48px-Under_construction_icon-blue.png" });
+        }
+    </script>
     @RenderBody()
 </body>
 </html>
+
+
+<script>
+        $(document).ready(function() {
+            $("#scrollBar").click(function(event){
+                $('html, body').animate({scrollTop: '+=500px'}, 1000);
+            });
+        });
+</script>
 
 <!--
 <li class="list-group-item"> <a href="@Url.Action("Index", "User")">configure users</a></li>
@@ -36,7 +55,6 @@
 <li class="list-group-item"> <a href="@Url.Action("Index", "BookLibraryLinks")">configure connection between books and libraries</a></li>
 <li class="list-group-item"> <a href="@Url.Action("Register", "Registration")">user registration</a></li>
 <li class="list-group-item"> <a href="@Url.Action("Login", "Authorization")">user authorization</a></li>
-<li class="list-group-item"> <a href="@Url.Action("Find", "Search")">book header search</a></li>
 <li class="list-group-item"> <a href="@Url.Action("Index", "BookRatings")">configure book ratings</a></li>
 <li class="list-group-item"> <a href="@Url.Action("Index", "topTen")">top ten books</a></li>
 <li class="list-group-item"> <a href="@Url.Action("Index", "BookByCategories")">books by categories</a></li>

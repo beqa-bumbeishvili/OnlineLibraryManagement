@@ -1,7 +1,5 @@
 ﻿@model IEnumerable<Online_Library_System.Models.book>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
+
 <div id="slider">
     <div class="shell">
         <ul>
@@ -12,9 +10,11 @@
                 <div class="details">
                     <h2>Bestsellers</h2>
                     <h3>Special Offers</h3>
-                    <p class="title">Pellentesque congue lorem quis macssa blandit non pretium nisi pharetra</p>
-                    <p class="description">Lorem ipsum dolor sit amet, onsectetur adipiscing elit. Praesent id odio in tortor scelerisque dictum. Phasellus varius sem sit amet metus volutpat vel vehicula nunc lacinia.</p>
-                    <a href="@Url.Action("Index", "GoogleMap")" class="read-more-btn">See more</a>
+                    <p class="title">made for Euhack!</p>
+                    <p class="description">This project means to simplify book-lovers life; readers can access library database online, 
+                      see which books are available,
+                     choose what to read and order them online! </p>
+                    <a href="#" class="read-more-btn" style="opacity:0.5;">Read More</a>
                 </div>
             </li>
             <li>
@@ -24,9 +24,13 @@
                 <div class="details">
                     <h2>Bestsellers</h2>
                     <h3>Special Offers</h3>
-                    <p class="title">Pellentesque congue lorem quis massa blandit non pretium nisi pharetra</p>
-                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id odio in tortor scelerisque dictum. Phasellus varius sem sit amet metus volutpat vel vehicula nunc lacinia.</p>
-                    <a href="#" class="read-more-btn">See more</a>
+                    <p class="title">made for Euhack!</p>
+                    <p class="description">
+                        This project means to simplify book-lovers life; readers can access library database online,
+                        see which books are available,
+                        choose what to read and order them online!
+                    </p>
+                    <a href="#" class="read-more-btn" style="opacity:0.5;">Read More</a>
                 </div>
             </li>
             <li>
@@ -36,9 +40,13 @@
                 <div class="details">
                     <h2>Bestsellers</h2>
                     <h3>Special Offers</h3>
-                    <p class="title">Pellentesque congue lorem quis massa blandit non pretium nisi pharetra</p>
-                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id odio in tortor scelerisque dictum. Phasellus varius sem sit amet metus volutpat vel vehicula nunc lacinia.</p>
-                    <a href="#" class="read-more-btn">See more</a>
+                    <p class="title">made for Euhack!</p>
+                    <p class="description">
+                        This project means to simplify book-lovers life; readers can access library database online,
+                        see which books are available,
+                        choose what to read and order them online!
+                    </p>
+                    <a href="#" class="read-more-btn" style="opacity:0.5;">Read More</a>
                 </div>
             </li>
             <li>
@@ -48,12 +56,16 @@
                 <div class="details">
                     <h2>Bestsellers</h2>
                     <h3>Special Offers</h3>
-                    <p class="title">Pellentesque congue lorem quis massa blandit non pretium nisi pharetra</p>
-                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id odio in tortor scelerisque dictum. Phasellus varius sem sit amet metus volutpat vel vehicula nunc lacinia.</p>
-                    <a href="#" class="read-more-btn">See more</a>
+                    <p class="title">made for Euhack!</p>
+                    <p class="description">
+                        This project means to simplify book-lovers life; readers can access library database online,
+                        see which books are available,
+                        choose what to read and order them online!
+                    </p>
+                    <a href="#" class="read-more-btn" style="opacity:0.5;">Read More</a>
                 </div>
             </li>
-        </ul>
+</ul>
         <div class="nav">
             <a href="#">1</a>
             <a href="#">2</a>
@@ -74,7 +86,7 @@
                         <ul>
                             @foreach (var item in Model.Select(x => x.genre).Distinct().Take(8))
                             {
-                                <li><a name="@Html.DisplayFor(modelItem => item)" href="#">@Html.DisplayFor(modelItem => item)</a></li>
+                                <li><a name="@Html.DisplayFor(modelItem => item)">@Html.DisplayFor(modelItem => item)</a></li>
                             }
                         </ul>
                     </form>
@@ -85,7 +97,7 @@
                     <ul>
                         @foreach (var item in Model.Select(x => x.Author).OrderBy(x => Guid.NewGuid()).Take(12)) //randomad agenerirebs avtorebs
                         {
-                            <li><a href="#">@Html.DisplayFor(modelItem => item)</a></li>
+                            <li><a>@Html.DisplayFor(modelItem => item)</a></li>
                         }
                     </ul>
                 </li>
@@ -96,13 +108,13 @@
         <div id="content">
             <!-- Products -->
             <div class="products">
-               <h3>Featured Products<a href="@Url.Action("Index", "Modal")" target="_blank"> <button id="idea" style="margin-left:350px;">this one</button></a>  </h3>
+               <h3>Featured Products</h3>
                 <ul>
                     @foreach (var item in Model.OrderBy(x => Guid.NewGuid()).Distinct().Take(8))
                     {
                         <li>
                             <div class="product">
-                                <a href="#" class="info">
+                                <a class="info">
                                     <span class="holder">
                                         @{
                                             string a = "data:image/png;base64," + Convert.ToBase64String(item.picture);
@@ -113,10 +125,10 @@
                                         <span class="description">@item.description</span>
                                     </span>
                                 </a>
-                                <a href="#" class="buy-btn">Order<span class="price"><span class="low">$</span>@item.Price<span class="high">00</span></span></a>
+                                <a class="buy-btn"><text style="padding-left:4px;">Order</text> <span class="price"><span class="low">$</span>@item.Price<span class="high">00</span></span></a>
                             </div>
                         </li>
-                                            }
+  }
                 </ul>
                 <!-- End Products -->
             </div>
@@ -143,24 +155,9 @@
                     }
                 </ul>
             </div>
-            <!-- End Best-sellers -->
         </div>
-        <!-- End Content -->
         <div class="cl">&nbsp;</div>
+        <br /><br />
+        <h3 class="page-header" style="padding-top:15px; text-align:center; border-top: solid 4px #eaeaea;">&copy; 2016 - a page by <a href="https://www.freecodecamp.com/beqa-bumbeishvili" target="_blank">beqa</a></h3>
     </div>
-    <!-- End Main -->
-
-<!--
-        <li class="list-group-item"> <a href="@Url.Action("Index", "User")">configure users</a></li>
-        <li class="list-group-item"> <a href="@Url.Action("Index", "Books")">configure Books</a></li>
-        <li class="list-group-item"> <a href="@Url.Action("Index", "Libraries")">configure libraries</a></li>
-        <li class="list-group-item"> <a href="@Url.Action("Index", "BookUserLinks")">configure connection between books and users</a></li>
-        <li class="list-group-item"> <a href="@Url.Action("Index", "BookLibraryLinks")">configure connection between books and libraries</a></li>
-        <li class="list-group-item"> <a href="@Url.Action("Register", "Registration")">user registration</a></li>
-        <li class="list-group-item"> <a href="@Url.Action("Login", "Authorization")">user authorization</a></li>
-        <li class="list-group-item"> <a href="@Url.Action("Find", "Search")">book header search</a></li>
-        <li class="list-group-item"> <a href="@Url.Action("Index", "BookRatings")">configure book ratings</a></li>
-        <li class="list-group-item"> <a href="@Url.Action("Index", "topTen")">top ten books</a></li>
-        <li class="list-group-item"> <a href="@Url.Action("Index", "BookByCategories")">books by categories</a></li>
-        <li class="list-group-item"> <a href="@Url.Action("Index", "GoogleMap")">books by categories</a></li>
-        -->
+  
